@@ -104,13 +104,13 @@ func resourceIssueCreate(d *schema.ResourceData, m interface{}) error {
 
 	if assignee != "" {
 		i.Fields.Assignee = &jira.User{
-			Name: assignee.(string),
+			AccountID: assignee.(string),
 		}
 	}
 
 	if reporter != "" {
 		i.Fields.Reporter = &jira.User{
-			Name: reporter.(string),
+			AccountID: reporter.(string),
 		}
 	}
 
